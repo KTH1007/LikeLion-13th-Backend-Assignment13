@@ -1,0 +1,25 @@
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/likelion_kakao
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+jwt:
+  secret: ${JWT_SECRET}
+  access-token-validity-in-milliseconds: 3600000  # 1시간
+
+token:
+  expire:
+    time: 1800000  # JWT 토큰 유효시간 (30분)
+
+kakao:
+  client-id:  ${KAKAO_CLIENT_ID}
+  client-secret: ${KAKAO_CLIENT_SECRET}
+  redirect-uri: ${KAKAO_REDIRECT_URI}
+  token-url: ${KAKAO_TOKEN_URL}
+  user-info-url: ${KAKAO_USER_INFO_URL}
